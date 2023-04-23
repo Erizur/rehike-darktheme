@@ -10,7 +10,7 @@
 // @downloadURL  https://github.com/Erizur/rehike-darktheme/raw/main/main.user.js
 // @updateURL    https://github.com/Erizur/rehike-darktheme/raw/main/main.user.js
 // @grant        GM_getResourceText
-// @run-at       document-start
+// @run-at       document-end
 // ==/UserScript==
 
 var darkStyle;
