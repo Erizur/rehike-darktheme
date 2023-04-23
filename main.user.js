@@ -17,13 +17,13 @@ function checkTime()
 {
     var date = new Date();
     var darkTime = date.getHours() >= 19 ? true : false;
-    
+
     if(darkTime && darkStyle == undefined) darkStyle = GM_addStyle(GM_getResourceText('style'));
 }
 
 function start_refresh(){
     var refresh = 60000; // Refresh rate in milli seconds
-    setTimeout(checkTime(), refresh);
+    setTimeout(checkTime(),refresh);
 }
 
 start_refresh();
