@@ -6,7 +6,7 @@
 // @author       You
 // @match        https://www.youtube.com/
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
-// @resource style 
+// @resource style https://raw.githubusercontent.com/Erizur/rehike-darktheme/main/css/main.css
 // @grant        GM_addStyle
 // @run-at       document-end
 // ==/UserScript==
