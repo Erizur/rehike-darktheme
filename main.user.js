@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Switch Hitchhiker to dark theme
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  auto dark theme switcher for rehike, fork this if you wanna add custom styles.
 // @author       AM_Erizur
 // @match        https://www.youtube.com/*
@@ -18,7 +18,7 @@ var darkStyle;
 function checkTime() {
   var date = new Date();
   var hour = date.getHours();
-  var darkTime = hour >= 19 || hour <= 6;
+  var darkTime = hour >= 17 || hour <= 6;
 
   if (darkTime && darkStyle == undefined) darkStyle = addDarkStyle();
   if (darkTime == false && darkStyle !== undefined) darkStyle.remove();
@@ -32,9 +32,4 @@ function addDarkStyle() {
   return style;
 }
 
-function start_refresh() {
-  var refresh = 60000; // Refresh rate in milli seconds
-  setTimeout(checkTime(), refresh);
-}
-
-start_refresh();
+setInterval(checkTime(), 5000);
