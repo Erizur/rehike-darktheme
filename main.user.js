@@ -18,7 +18,7 @@ var darkStyle;
 function checkTime() {
   var date = new Date();
   var hour = date.getHours();
-  var darkTime = hour >= 18 || hour <= 6;
+  var darkTime = hour >= 17 || hour <= 6;
 
   if (darkTime && darkStyle == undefined) darkStyle = addDarkStyle();
   if (darkTime == false && darkStyle !== undefined) darkStyle.remove();
@@ -32,4 +32,4 @@ function addDarkStyle() {
   return style;
 }
 
-setInterval(checkTime(), 5000);
+var i = setInterval(checkTime, 5000);
