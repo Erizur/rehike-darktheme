@@ -8,3 +8,7 @@ After that, click on the "Raw" button located in the menu that will show up, and
 # Configuration
 As of right now, there isn't a good way to configure the time that the userscript will change themes.
 You will have to edit the userscript, more specifically the line that contains the "hour" variable (line 21 as of now)
+
+# Credits
+- Aubrey ([aubymori](https://github.com/aubymori)) for the original Hitchhiker Dark Variant Userstyle.
+- Taniko Yamamoto ([YukisCoffee](https://github.com/YukisCoffee)) for additional help.
