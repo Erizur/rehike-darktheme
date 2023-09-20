@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Switch Hitchhiker to dark theme
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  auto dark theme switcher for rehike, fork this if you wanna add custom styles.
 // @author       AM_Erizur
 // @match        https://www.youtube.com/*
@@ -10,7 +10,7 @@
 // @downloadURL  https://github.com/Erizur/rehike-darktheme/raw/main/main.user.js
 // @updateURL    https://github.com/Erizur/rehike-darktheme/raw/main/main.user.js
 // @grant        GM_getResourceText
-// @run-at       document-end
+// @run-at       document-start
 // ==/UserScript==
 
 var darkStyle;
@@ -24,12 +24,23 @@ function checkTime() {
   if (darkTime == false && darkStyle !== undefined) darkStyle.remove();
 }
 
-function addDarkStyle() {
+async function addDarkStyle() {
+  let body = await waitForElm("body");
   let style = document.createElement("style");
   style.innerHTML = GM_getResourceText("style");
-  document.documentElement.appendChild(style);
+  document.body.appendChild(style);
 
   return style;
 }
 
-var i = setInterval(checkTime, 5000);
+async function waitForElm(q)
+{
+    while (document.querySelector(q) == null)
+    {
+        await new Promise(r => requestAnimationFrame(r));
+    }
+    return document.querySelector(q);
+}
+
+checkTime();
+var i = setInterval(checkTime, 100);
