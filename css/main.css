@@ -363,3 +363,15 @@ button.yt-uix-button-epic-nav-item.yt-uix-button-toggled,
 .yt-ui-ellipsis {
   background: #202020;
 }
+
+#rehike-info-nightly .commit-name {
+    color: #ffffff;
+}
+#rehike-info-nightly .commit-branch {
+  color: #dfdfdf;
+}
+
+#rehike-version .commit-hash {
+  background: #292929;
+  border-color: #303030;
+}
